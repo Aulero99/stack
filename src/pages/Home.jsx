@@ -1,7 +1,19 @@
+import { createResource } from 'solid-js'
 import Card from '../components/Card'
+import { logger } from '../utils/Logger'
+import { keepsService } from '../services/KeepsService'
 
+const getKeepsFromApi = async () => {
+    try {
+        return keepsService.getKeepsFromApi()
+    } catch (e) {
+        logger.log(e)
+    }
+}
 
-export default function Home(props){
+export default function Home(){
+    const [keeps] = createResource(getKeepsFromApi)
+
     return(
         <>
         <h1>This is the Home Page</h1>
@@ -11,7 +23,8 @@ export default function Home(props){
             <p>
                 Some text passed in
             </p>
-            </Card>        
+            </Card>
+             <p>{console.log(keeps(), keeps.loading)}</p>       
         </>
     )
 }

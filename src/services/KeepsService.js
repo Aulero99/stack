@@ -1,11 +1,17 @@
+import { logger } from "../utils/Logger"
+import { api } from "./AxiosService"
+
 const MDI = 'api/keeps'
 
 class KeepsService{
     async getKeepsFromApi(){
-        console.log('getkeepsfromapi')
+        logger.log('getKeepsFromApi()')
+        const res = await api.get(MDI)
+        logger.log(res.data)
+        return res.data
     }
 
 
 }
 
-export const KeepsService = new KeepsService()
+export const keepsService = new KeepsService()
