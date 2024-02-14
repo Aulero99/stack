@@ -11,8 +11,8 @@ function App(props) {
   <>
     <header>
       <nav class="flex-row">
-        <A href="/">Home</A>
-        <A href="/about">About</A>
+        <A href="/" class='px-2'>Home</A>
+        <A href="/about" class='px-2'>About</A>
       </nav>
     </header>
     <img src={ solidLogo } alt="solid logo" height="100px"/>

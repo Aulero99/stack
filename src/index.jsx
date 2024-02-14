@@ -5,6 +5,7 @@ import { Router, Route } from '@solidjs/router'
 import { lazy } from 'solid-js'
 
 import NotFound from './pages/NotFound'
+// import { Auth0 } from '@rturnq/solid-auth0'
 const App = lazy(() => import('./App'))
 const Home = lazy(() => import("./pages/Home"))
 const About = lazy(() => import("./pages/About"))
