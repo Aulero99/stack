@@ -5,7 +5,9 @@ import { keepsService } from '../services/KeepsService'
 
 const getKeepsFromApi = async () => {
     try {
-        return keepsService.getKeepsFromApi()
+        let data = await keepsService.getKeepsFromApi()
+        logger.log(data)
+        return data
     } catch (e) {
         logger.log(e)
     }
