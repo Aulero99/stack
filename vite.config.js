@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [solid()],
   server:{
     host: false,
-    port: 8000,
+    port: 7000,
     watch:{
       usePolling: true
     }
